@@ -19,7 +19,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments.includes(:user)
+    @new_comment = Comment.new
+    @comments = @post.comments.includes(:user).where(post_id: @post.id)
+    @replies = Comment.group(:reply).count
   end
 
   private
