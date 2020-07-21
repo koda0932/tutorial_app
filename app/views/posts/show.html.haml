@@ -10,5 +10,13 @@
     = comment.id
     = comment.content
     = link_to "#" do
-      #reply-btn
-    = link_to "削除", post_comment_path(comment.post_id, comment.id), method: :delete
+      = icon('fa', 'reply', id: "reply-btn#{comment.id}")
+    = link_to post_comment_path(comment.post_id, comment.id), method: :delete do
+      = icon('fa', 'trash-alt')
+  = form_with(model: [@post, @comment], local: true, id: "reply-form#{comment.id}") do |form|
+    = form.text_area :text, id: "reply-text"
+    = hidden_field :reply, value: comment.id
+    .content__show__comment__bottom__reply__btn
+      .content__show__comment__bottom__reply__btn__cansel
+        = 'Cansel'
+    = form.submit "reply"
