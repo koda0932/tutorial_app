@@ -9,15 +9,18 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
-      %h1 Tutorial Channel
+      %h1.header__title Tutorial Channel
       %ul.header__list
-        %li.header__list__item
-          - if user_signed_in?
-            = link_to
+        - if user_signed_in?
+          %li.header__list__item
+            = link_to "投稿一覧", root_path
+          %li.header__list__item
+            = link_to "新規投稿", new_post_path
+          %li.header__list__item
             = link_to "ログアウト", destroy_user_session_path, method: :delete
-          - else
-            .header--list--item
-              = link_to "サインイン", new_user_registration_path
-            .header--list--item
-              = link_to "ログイン", new_user_session_path
+        - else
+          .header__list__item
+            = link_to "サインイン", new_user_registration_path
+          .header__list__item
+            = link_to "ログイン", new_user_session_path
     = yield
