@@ -1,3 +1,11 @@
-= link_to "新規投稿", new_post_path
-- @posts.each do |post|
-  = link_to post.title, post_path(post.id)
+.index
+  .index__search
+  .index__wrapper
+    - @posts.each do |post|
+      .index__wrapper__content
+        .index__wrapper__content__title
+          = link_to post.title, post_path(post.id)
+        .index__wrapper__content__tag
+          タグ
+        .index__wrapper__content__text
+          = post.text
