@@ -1,19 +1,19 @@
 .new
-  新規投稿
-  .new__wrapper
-    = form_with model: @post, local: true do |f|
-      .new__wrapper__content
-        .new__wrapper__content__title
-          .new__wrapper__content__title__top
+  .new__post
+    .new__post__top 新規投稿
+    .new__post__wrapper
+      = form_with model: @post, local: true do |f|
+        .new__post__wrapper__title
+          .new__post__wrapper__title__top
             タイトル
-          .new__wrapper__content__title__bottom
-            = f.text_field :title
-        .new__wrapper__content__tag
+          .new__post__wrapper__title__bottom
+            = f.text_field :title, class: "new__post__wrapper__title__bottom__field"
+        .new__post__wrapper__tag
           タグ
-        .new__wrapper__content__text
-          .new__wrapper__content__text__top
+        .new__post__wrapper__text
+          .new__post__wrapper__text__top
             テキスト
-          .new__wrapper__content__text__bottom
-            = f.text_area :text
-        .new__wrapper__content__btn
-          = f.submit "投稿"
+          .new__post__wrapper__text__bottom
+            = f.text_area :text, class: "new__post__wrapper__text__bottom__field", rows: 15
+        .new__post__wrapper__sub
+          = f.submit "投稿", class: "new__post__wrapper__sub__btn"
