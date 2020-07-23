@@ -1,23 +1,35 @@
-= @post.title
-= @post.text
+.index
+  .index__search
+  .index__wrapper
+    .index__wrapper__content
+      .index__wrapper__content__title
+        = @post.title
+      .index__wrapper__content__tag
+        タグ
+      .index__wrapper__content__text
+        = simple_format @post.text
 
 = form_with(model: [@post, @comment], local: true) do |f|
   = f.text_area :content
   = f.submit '送信'
 
 - @comments.each do |comment|
-  .comment_box
-    = comment.id
-    = comment.content
-    = link_to "#" do
-      = icon('fa', 'reply', id: "reply-btn#{comment.id}")
-    = link_to post_comment_path(comment.post_id, comment.id), method: :delete do
-      = icon('fa', 'trash-alt')
-  = form_with(model: [@post, @new_comment], local: true, id: "reply-form#{comment.id}") do |form|
-    = form.text_area :content, id: "reply-text"
-    = form.hidden_field :reply, value: comment.id
-    .content__show__comment__bottom__reply__btn
-      .content__show__comment__bottom__reply__btn__cansel
-        = 'Cansel'
-      = form.submit "reply"
+  - if comment.reply.blank?
+    - @comments.each do |reply|
+      .comment_box
+        = comment.id
+        = comment.content
+        - if reply.reply == comment.id
+          = reply.content
+        = link_to "#" do
+          = icon('fa', 'reply', id: "reply-btn#{comment.id}")
+        = link_to post_comment_path(comment.post_id, comment.id), method: :delete do
+          = icon('fa', 'trash-alt')
+      = form_with(model: [@post, @new_comment], local: true, id: "reply-form#{comment.id}") do |form|
+        = form.text_area :content, id: "reply-text"
+        = form.hidden_field :reply, value: comment.id
+        .content__show__comment__bottom__reply__btn
+          .content__show__comment__bottom__reply__btn__cansel
+            = 'Cansel'
+          = form.submit "reply"
 = @replies

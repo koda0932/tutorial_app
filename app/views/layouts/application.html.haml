@@ -9,7 +9,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
-      %h1.header__title Tutorial Channel
+      %h1.header__title
+        = link_to "Tutorial Channel", root_path
       %ul.header__list
         - if user_signed_in?
           %li.header__list__item
