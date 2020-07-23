@@ -1,0 +1,70 @@
+.index {
+  &__comment__field {
+    width: 50%;
+    margin: 0 auto;
+    &__area {
+      width: 100%;
+      border-radius: 5px;
+    }
+    &__btn {
+      display: inline-block;
+      border-radius: 5%;
+      text-align: center;
+      cursor: pointer;
+      padding: 8px 12px;
+      background: #efefef;
+      color: black;
+      line-height: 1em;
+      transition: 0.3s;
+    }
+  }
+  &__comment__main {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+    &__box {
+      background-color: #efefef;
+      margin-bottom: 10px;
+      &--top {
+        padding: 10px;
+        &--name {
+          color: green;
+        }
+      }
+      &--bottom {
+        padding: 10px;
+      }
+      #reply-text {
+        margin: 10px;
+        width: 94%;
+        padding: 0 10px;
+      }
+      .reply__btn {
+        padding: 0 10px;
+        &__cansel {
+          display: inline-block;
+          border-radius: 5%;
+          text-align: center;
+          cursor: pointer;
+          padding: 8px 12px;
+          background: #efefef;
+          color: black;
+          line-height: 1em;
+          transition: 0.3s;
+          border: 1px solid black;
+        }
+      }
+      .reply__btn {
+        display: inline-block;
+        border-radius: 5%;
+        text-align: center;
+        cursor: pointer;
+        padding: 8px 12px;
+        background: #efefef;
+        color: black;
+        line-height: 1em;
+        transition: 0.3s;
+      }
+    }
+  }
+}
