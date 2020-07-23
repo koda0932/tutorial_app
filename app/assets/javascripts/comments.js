@@ -13,4 +13,8 @@ $(function () {
       $("#reply-form" + value).hide();
     });
   });
+  $(".index__comment__main__reply").hide();
+  $(".index__comment__main__box--reply").on("click", function () {
+    $(".index__comment__main__reply").toggle();
+  });
 });

@@ -16,22 +16,40 @@
 
   .index__comment__main
     - @comments.each do |comment|
-      .index__comment__main__box
-        .index__comment__main__box--top
-          = comment.id
-          %span.index__comment__main__box--top--name 名無しのチュートリアルさん
-          = comment.created_at.strftime("%Y年%m月%d日 %H:%M")
-        .index__comment__main__box--bottom
-          = simple_format comment.content
-        = link_to "#" do
-          = icon('fa', 'reply', id: "reply-btn#{comment.id}")
-        = link_to post_comment_path(comment.post_id, comment.id), method: :delete do
-          = icon('fa', 'trash-alt')
-        = form_with(model: [@post, @new_comment], local: true, id: "reply-form#{comment.id}") do |form|
-          = form.text_area :content, id: "reply-text", placeholder: "コメントする"
-          = form.hidden_field :reply, value: comment.id
-          .reply__btn
-            .reply__btn__cansel
-              = 'Cansel'
-          = form.submit "Reply", class: "reply__btn"
-  = @replies
+      - if comment.reply.blank?
+        .index__comment__main__box
+          .index__comment__main__box--top
+            = comment.id
+            %span.index__comment__main__box--top--name 名無しのチュートリアルさん
+            = comment.created_at.strftime("%Y年%m月%d日 %H:%M")
+          .index__comment__main__box--bottom
+            = simple_format comment.content
+          = link_to "#" do
+            = icon('fa', 'reply', id: "reply-btn#{comment.id}")
+          = link_to post_comment_path(comment.post_id, comment.id), method: :delete do
+            = icon('fa', 'trash-alt')
+          .index__comment__main__box--reply
+            - if @replies[comment.id] == nil
+              = ""
+            - elsif @replies[comment.id] == 1
+              = "#{ @replies[comment.id] }Reply"
+            - else
+              = "#{ @replies[comment.id] }Replies"
+          = form_with(model: [@post, @new_comment], local: true, id: "reply-form#{comment.id}") do |form|
+            = form.text_area :content, id: "reply-text", placeholder: "コメントする"
+            = form.hidden_field :reply, value: comment.id
+            .reply__btn
+              .reply__btn__cansel
+                = 'Cansel'
+            = form.submit "Reply", class: "reply__btn"
+        - @comments.each do |reply|
+          - if reply.reply == comment.id
+            .index__comment__main__reply
+              .index__comment__main__reply--top
+                = reply.user.id
+                %span.index__comment__main__reply--top--name 名無しのチュートリアルさん
+                = reply.created_at.strftime("%Y年%m月%d日 %H:%M")
+              .index__comment__main__reply--
+                >>
+                = comment.id
+                = simple_format reply.content

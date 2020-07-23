@@ -20,8 +20,8 @@
   }
   &__comment__main {
     width: 50%;
-    margin: 0 auto;
-    margin-top: 15px;
+    margin: 15px auto 0;
+    padding-bottom: 15px;
     &__box {
       background-color: #efefef;
       margin-bottom: 10px;
@@ -33,6 +33,12 @@
       }
       &--bottom {
         padding: 10px;
+      }
+      &--reply {
+        margin-top: 10px;
+        margin-left: 10px;
+        color: green;
+        cursor: pointer;
       }
       #reply-text {
         margin: 10px;
@@ -64,6 +70,20 @@
         color: black;
         line-height: 1em;
         transition: 0.3s;
+      }
+    }
+    &__reply {
+      background-color: #efefef;
+      margin-bottom: 15px;
+      width: 50%;
+      &--top {
+        padding: 10px;
+        &--name {
+          color: green;
+        }
+      }
+      &--bottom {
+        padding: 10px;
       }
     }
   }
