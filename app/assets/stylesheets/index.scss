@@ -16,7 +16,7 @@
       border-radius: 10px;
       box-shadow: 0 0 8px grey;
       &__title {
-        font-size: 30px;
+        font-size: 24px;
         margin: 0 15px 15px;
         border-bottom: 1px solid #dae0e5;
         a {
@@ -27,8 +27,11 @@
         }
       }
       &__tag {
-        margin: 0 15px 15px;
+        margin: 10px;
         border-bottom: 1px solid #dae0e5;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
       }
       &__text {
         margin: 0 15px 15px;

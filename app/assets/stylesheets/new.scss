@@ -29,10 +29,19 @@
       &__tag {
         margin-top: 15px;
         height: 30px;
-        background-color: thistle;
+        &__top {
+          text-align: left;
+          margin-left: 15px;
+        }
+        &__bottom {
+          &__field {
+            width: 95%;
+            border-radius: 5px;
+          }
+        }
       }
       &__text {
-        margin-top: 15px;
+        margin-top: 40px;
         &__top {
           text-align: left;
           margin-left: 15px;
