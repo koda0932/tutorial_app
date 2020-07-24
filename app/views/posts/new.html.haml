@@ -9,7 +9,10 @@
           .new__post__wrapper__title__bottom
             = f.text_field :title, class: "new__post__wrapper__title__bottom__field"
         .new__post__wrapper__tag
-          タグ
+          .new__post__wrapper__tag__top
+            タグ
+          .new__post__wrapper__tag__bottom
+            = f.text_field :tag_list, value: @post.tag_list.join(',')
         .new__post__wrapper__text
           .new__post__wrapper__text__top
             テキスト
