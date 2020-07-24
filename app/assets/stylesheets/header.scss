@@ -9,8 +9,27 @@ a {
   justify-content: space-between;
   align-items: center;
   &__title {
-    font-size: 32px;
     margin-left: 50px;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    a {
+      font-size: 32px;
+    }
+    &__search {
+      margin-left: 30px;
+      width: 50%;
+      &__field {
+        border-radius: 5px;
+        width: 50%;
+      }
+      &__btn {
+        background-color: #485369;
+        color: white;
+        padding: 1px 10px;
+        border-radius: 5px;
+      }
+    }
   }
   &__list {
     display: flex;

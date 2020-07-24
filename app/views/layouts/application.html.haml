@@ -11,6 +11,10 @@
     .header
       %h1.header__title
         = link_to "Tutorial Channel", root_path
+        .header__title__search
+          = search_form_for @q do |f|
+            = f.search_field :title_or_text_cont, class: "header__title__search__field", placeholder: "キーワードを入力"
+            = f.submit "検索", class: "header__title__search__btn"
       %ul.header__list
         - if user_signed_in?
           %li.header__list__item

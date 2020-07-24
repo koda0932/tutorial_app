@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  before_action :set_search
+
   def index
-    @posts = Post.all
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}")
     end
@@ -30,5 +31,10 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :text, :tag_list).merge(user_id: current_user.id)
+  end
+
+  def set_search
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).order('created_at DESC')
   end
 end
