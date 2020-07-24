@@ -1,0 +1,16 @@
+.tags {
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  padding: 3px;
+  border: 1px solid #dae0e5;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  background-color: #12a3b8;
+  a {
+    color: white;
+  }
+}
+.tags:hover {
+  opacity: 0.7;
+}
