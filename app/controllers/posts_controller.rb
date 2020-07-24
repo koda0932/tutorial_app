@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}")
+    end
   end
 
   def new
@@ -26,6 +29,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :text).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :text, :tag_list).merge(user_id: current_user.id)
   end
 end

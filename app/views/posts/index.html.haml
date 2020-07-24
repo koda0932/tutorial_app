@@ -7,5 +7,6 @@
           = link_to post.title, post_path(post.id)
         .index__wrapper__content__tag
           タグ
+          = render 'posts/tag_list', tag_list: post.tag_list
         .index__wrapper__content__text
           = simple_format post.text
