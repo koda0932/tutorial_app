@@ -2,12 +2,12 @@
   display: inline-block;
   text-align: center;
   padding: 5px;
-  border: 1px solid #dae0e5;
+  border: 1px solid $gray;
   border-radius: 5px;
   margin: 0 0 8px 8px;
   background-color: #12a3b8;
   a {
-    color: white;
+    color: $white;
   }
 }
 .tags:hover {

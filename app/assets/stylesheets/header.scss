@@ -1,6 +1,6 @@
 .header {
   height: 70px;
-  background-color: white;
+  background-color: $white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +21,7 @@
       }
       &__btn {
         background-color: #485369;
-        color: white;
+        color: $white;
         padding: 1px 10px;
         border-radius: 5px;
         cursor: pointer;

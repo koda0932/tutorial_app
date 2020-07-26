@@ -12,8 +12,8 @@
       text-align: center;
       cursor: pointer;
       padding: 8px 12px;
-      background: #efefef;
-      color: black;
+      background: $dark_gray;
+      color: $black;
       line-height: 1em;
       transition: 0.3s;
     }
@@ -23,12 +23,12 @@
     margin: 15px auto 0;
     padding-bottom: 15px;
     &__box {
-      background-color: #efefef;
+      background-color: $dark_gray;
       margin-bottom: 10px;
       &--top {
         padding: 10px;
         &--name {
-          color: green;
+          color: $green;
         }
       }
       &--bottom {
@@ -37,7 +37,7 @@
       &--reply {
         margin-top: 10px;
         margin-left: 10px;
-        color: green;
+        color: $green;
         cursor: pointer;
       }
       #reply-text {
@@ -53,11 +53,11 @@
           text-align: center;
           cursor: pointer;
           padding: 8px 12px;
-          background: #efefef;
-          color: black;
+          background: $dark_gray;
+          color: $black;
           line-height: 1em;
           transition: 0.3s;
-          border: 1px solid black;
+          border: 1px solid $black;
         }
       }
       .reply__btn {
@@ -66,21 +66,21 @@
         text-align: center;
         cursor: pointer;
         padding: 8px 12px;
-        background: #efefef;
-        color: black;
+        background: $dark_gray;
+        color: $black;
         line-height: 1em;
         transition: 0.3s;
       }
     }
     &__reply {
-      background-color: #efefef;
+      background-color: $dark_gray;
       margin-bottom: 15px;
       width: 60%;
       padding: 5px;
       &--top {
         padding: 10px;
         &--name {
-          color: green;
+          color: $green;
         }
       }
       &--bottom {

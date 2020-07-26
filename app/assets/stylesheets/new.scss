@@ -1,12 +1,12 @@
 .new {
   width: 100%;
   height: calc(100vh - 70px);
-  background-color: #dae0e5;
+  background-color: $gray;
   padding-top: 15px;
   &__post {
     width: 50%;
     margin: 0 auto;
-    background-color: white;
+    background-color: $white;
     text-align: center;
     box-shadow: 0 0 8px grey;
     &__top {
@@ -62,7 +62,7 @@
           font-size: 14pt;
           cursor: pointer;
           padding: 12px 12px;
-          background: white;
+          background: $white;
           line-height: 1em;
           transition: 0.3s;
           box-shadow: 6px 6px 3px #666666;
