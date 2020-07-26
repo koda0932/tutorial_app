@@ -46,7 +46,7 @@
           - if reply.reply == comment.id
             .index__comment__main__reply
               .index__comment__main__reply--top
-                = reply.user.id
+                = reply.id
                 %span.index__comment__main__reply--top--name 名無しのチュートリアルさん
                 = reply.created_at.strftime("%Y年%m月%d日 %H:%M")
               .index__comment__main__reply--
